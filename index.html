@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071b15">
+  <title>Fútbol de Barrio — Liga Argentina</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Fútbol de Barrio inicio"><span class="brand-mark">⚽</span><span>FÚTBOL <b>DE BARRIO</b><small>LIGA ARGENTINA · TEMPORADA 2025</small></span></a>
+      <div class="live-pill"><i></i> MODO EXHIBICIÓN</div>
+      <button class="sound-toggle" id="soundBtn" aria-label="Activar o desactivar sonido">♫ <span>SONIDO</span></button>
+    </header>
+    <section class="match-wrap" aria-label="Partido de fútbol">
+      <div class="match-head">
+        <div><div class="eyebrow">FECHA 12 <span>·</span> TORNEO APERTURA</div><h1>EL CLÁSICO <em>SE JUEGA.</em></h1></div>
+        <div class="round-tag"><span class="round-dot"></span> ESTADIO EL BARRIO <span class="tag-divider">/</span> BUENOS AIRES</div>
+      </div>
+      <div class="scoreboard">
+        <div class="team team-home"><span class="team-crest home-crest" id="homeCrest">BO</span><div><strong id="homeName">BOCA JUNIORS</strong><small>LOCAL</small></div></div>
+        <div class="score-center"><div class="scoreline"><span id="homeScore">0</span><i>:</i><span id="awayScore">0</span></div><div class="match-clock"><span class="clock-dot"></span><span id="clock">00:00</span><b id="period">1T</b></div></div>
+        <div class="team team-away"><div><strong id="awayName">RIVER PLATE</strong><small>VISITANTE</small></div><span class="team-crest away-crest" id="awayCrest">RP</span></div>
+      </div>
+      <div class="stadium-frame">
+        <canvas id="game" width="1000" height="600" aria-label="Cancha de fútbol interactiva"></canvas>
+        <div class="canvas-vignette"></div>
+        <div class="canvas-hud"><span class="weather"><b>☀</b> 22° <i>·</i> NOCHE DE FÚTBOL</span><span class="hud-right" id="hudHint">PRESIONÁ <b>JUGAR</b> PARA EMPEZAR</span></div>
+        <div class="center-overlay" id="startOverlay">
+          <div class="overlay-card">
+            <div class="mini-label"><span></span> PARTIDO DE UNA VIDA <span></span></div>
+            <h2>QUE RUEDE<br><em>LA PELOTA.</em></h2>
+            <p>La tribuna está lista. ¿Vos también?</p>
+            <button class="play-button" id="playBtn"><span>JUGAR EL PARTIDO</span><b>→</b></button>
+            <div class="team-selects"><label>VESTÍ LA <select id="teamSelect"><option value="boca">AZUL Y ORO · BOCA</option><option value="river">LA BANDA · RIVER</option><option value="racing">CELeste Y BLANCO · RACING</option><option value="independiente">ROJO · INDEPENDIENTE</option><option value="sanlorenzo">AZULGRANA · SAN LORENZO</option></select></label><span>90 MINUTOS · 5 VS 5</span></div>
+          </div>
+        </div>
+        <div class="center-overlay hidden" id="pauseOverlay"><div class="overlay-card pause-card"><div class="mini-label"><span></span> PAUSA <span></span></div><h2>RESPIRÁ.<br><em>SEGUIMOS.</em></h2><button class="play-button" id="resumeBtn"><span>VOLVER AL PARTIDO</span><b>→</b></button></div></div>
+        <div class="center-overlay hidden" id="endOverlay"><div class="overlay-card pause-card"><div class="mini-label"><span></span> FINAL DEL PARTIDO <span></span></div><h2 id="finalTitle">¡QUÉ PARTIDO!</h2><p id="finalText"></p><button class="play-button" id="againBtn"><span>JUGAR DE NUEVO</span><b>↻</b></button></div></div>
+        <div class="goal-flash hidden" id="goalFlash">¡GOOOL!<small id="goalTeam"></small></div>
+      </div>
+      <footer class="game-footer">
+        <div class="controls"><div class="key-group"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>MOVER</span></div><div class="key-group"><kbd class="wide">ESPACIO</kbd><span>PATEAR</span></div><div class="key-group"><kbd>SHIFT</kbd><span>PIQUE</span></div><div class="key-group"><kbd>ESC</kbd><span>PAUSA</span></div></div>
+        <div class="footer-note"><span class="spark">✦</span> HECHO PARA LOS QUE NUNCA DEJAN DE JUGAR</div>
+      </footer>
+      <div class="mobile-controls" aria-label="Controles táctiles">
+        <div class="dpad"><button data-dir="up" aria-label="Arriba">▲</button><button data-dir="left" aria-label="Izquierda">◀</button><button data-dir="down" aria-label="Abajo">▼</button><button data-dir="right" aria-label="Derecha">▶</button></div>
+        <div class="mobile-actions"><button id="mobilePass">PASE</button><button id="mobileShoot">PATEAR</button></div>
+      </div>
+    </section>
+    <div class="bottomline"><span>FÚTBOL ARGENTINO, A CORAZÓN ABIERTO.</span><span>HECHO CON <b>♥</b> EN ARGENTINA</span></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
